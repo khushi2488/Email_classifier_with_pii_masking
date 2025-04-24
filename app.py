@@ -1,19 +1,23 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from utils import mask_email_string
 import json
+
+from utils import mask_email_string
 
 # Create a FastAPI app instance
 app = FastAPI()
+
 
 # Define input model
 class EmailRequest(BaseModel):
     email: str
 
+
 # Define output model (optional for clarity)
 class EmailResponse(BaseModel):
     input_email_body: str
     list_of_masked_entities: list
+
 
 # Route for POST API
 @app.post("/classify")
