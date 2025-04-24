@@ -1,25 +1,28 @@
-"""
-Main entry point for processing the email text and demonstrating the masking
-of sensitive entities in an email using an API request.
-"""
-
+from fastapi import FastAPI
+from pydantic import BaseModel
 from utils import mask_email_string
 import json
-def main():
-    """
-    Run a demo on masking email content by processing input text.
-    """
-    
-    # Example email string to mask sensitive information
-    sample_email = (
-        "My name is John Doe. You can reach me at john.doe@example.com. "
-        "My contact number is +91-9876543210."
-    )
 
-    result_dict = mask_email_string(sample_email)
+# Create a FastAPI app instance
+app = FastAPI()
 
-    # Display the results in the required format
-    print(json.dumps(result_dict, indent=2))
-    
-if __name__ == "__main__":
-    main()
+# Define input model
+class EmailRequest(BaseModel):
+    email: str
+
+# Define output model (optional for clarity)
+class EmailResponse(BaseModel):
+    input_email_body: str
+    list_of_masked_entities: list
+
+# Route for POST API
+@app.post("/classify")
+def classify_email(request: EmailRequest):
+    # Call the masking function (your logic)
+    result_json_str = mask_email_string(request.email)
+
+    # Convert JSON string to Python dict
+    result_dict = json.loads(result_json_str)
+
+    # Return it as JSON response
+    return result_dict
