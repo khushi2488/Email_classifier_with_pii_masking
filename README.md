@@ -1,4 +1,4 @@
-📧 Email Classification API for Support Teams
+## 📧 Email Classification API for Support Teams
 A backend-only FastAPI project that classifies support emails into predefined categories after masking sensitive personal information like names, emails, phone numbers, etc. Includes PII detection, masking, classification, and demasking — all exposed via a clean API endpoint. Ready for deployment on Hugging Face Spaces.
 # Email Classifier with PII Masking
 
@@ -6,7 +6,7 @@ A backend-only FastAPI project that classifies support emails into predefined ca
 
 The **Email Classifier with PII Masking** is a Python-based project designed to classify incoming support emails into predefined categories while masking personally identifiable information (PII) for privacy and compliance. This tool ensures that sensitive information like names, email addresses, phone numbers, and others are protected before processing the email content.
 
-📌 Features
+## 📌 Features
 
 1)Built with FastAPI
 
@@ -24,7 +24,7 @@ The **Email Classifier with PII Masking** is a Python-based project designed to 
 🧪 How to Use the API
 Make a POST request to: https://khushi2488-email-classifier-with-pii-masking.hf.space/classify
 
-⚙️ Setup Instructions
+## ⚙️ Setup Instructions
 
 1.Clone the repository : git clone https://github.com/khushi2488/email-classifier-api.git
 
@@ -38,5 +38,9 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 3.Install dependencies:pip install -r requirements.txt
 
 4.Run the app locally:uvicorn app:app --reload
+
+## 📄 Project Report
+
+Download or view the report: [Email_Classification_System_Report.pdf](./Email_Classification_System_Report.pdf)
 
 
