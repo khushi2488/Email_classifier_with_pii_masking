@@ -33,11 +33,11 @@ Make a POST request to: https://khushi2488-email-classifier-with-pii-masking.hf.
 3.Create a virtual environment (optional but recommended):
 python -m venv venv
 
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+4.source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-3.Install dependencies:pip install -r requirements.txt
+5.Install dependencies:pip install -r requirements.txt
 
-4.Run the app locally:uvicorn app:app --reload
+6.Run the app locally:uvicorn app:app --reload
 
 ## 📄 Project Report
 
