@@ -7,10 +7,13 @@ A backend-only FastAPI project that classifies support emails into predefined ca
 The **Email Classifier with PII Masking** is a Python-based project designed to classify incoming support emails into predefined categories while masking personally identifiable information (PII) for privacy and compliance. This tool ensures that sensitive information like names, email addresses, phone numbers, and others are protected before processing the email content.
 
 📌 Features
-Built with FastAPI
-Supports email classification and masking of PII
-RESTful POST endpoint at /classify
-Interactive API documentation via Swagger UI
+1)Built with FastAPI
+
+2)Supports email classification and masking of PII
+
+3)RESTful POST endpoint at /classify
+
+4)Interactive API documentation via Swagger UI
 
 ## 🚀 Deployment
 
@@ -23,12 +26,15 @@ Make a POST request to: https://khushi2488-email-classifier-with-pii-masking.hf.
 ⚙️ Setup Instructions
 1.Clone the repository
 git clone https://github.com/khushi2488/email-classifier-api.git
+
 cd email-classifier-api
 2.Create a virtual environment (optional but recommended):
 python -m venv venv
+
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 3.Install dependencies:
 pip install -r requirements.txt
+
 4.Run the app locally:
 uvicorn app:app --reload
 
