@@ -25,6 +25,7 @@ The **Email Classifier with PII Masking** is a Python-based project designed to 
 Make a POST request to: https://khushi2488-email-classifier-with-pii-masking.hf.space/classify
 
 ⚙️ Setup Instructions
+
 1.Clone the repository : git clone https://github.com/khushi2488/email-classifier-api.git
 
 2.cd email-classifier-api
