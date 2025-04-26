@@ -9,13 +9,13 @@ from utils import mask_email_string
 app = Flask(__name__)
 
 
-@app.route('/mask', methods=['POST'])
+@app.route('/classify', methods=['POST'])
 def mask_text():
     """
     API endpoint to mask sensitive information in a given email body.
 
     Expects:
-        JSON request with a key 'text' containing the email body.
+        JSON request with a key 'email' containing the email body.
 
     Returns:
         JSON response with:
@@ -26,12 +26,12 @@ def mask_text():
     """
     content = request.get_json()
 
-    if not content or 'text' not in content:
+    if not content or 'email' not in content:
         return jsonify({
-            "error": "Please provide 'text' in the request body"
+            "error": "Please provide 'email' in the request body"
         }), 400
 
-    result_json = mask_email_string(content['text'])
+    result_json = mask_email_string(content['email'])
 
     return Response(result_json, mimetype='application/json')
 
