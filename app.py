@@ -8,25 +8,32 @@ from utils import mask_email_string
 app = FastAPI()
 
 
-# Define input model
 class EmailRequest(BaseModel):
+    """Input model containing the email text."""
     email: str
 
 
-# Define output model (optional for clarity)
 class EmailResponse(BaseModel):
+    """Output model for masked email response."""
     input_email_body: str
     list_of_masked_entities: list
 
 
-# Route for POST API
 @app.post("/classify")
 def classify_email(request: EmailRequest):
-    # Call the masking function (your logic)
+    """
+    API endpoint to classify and mask sensitive information in an email.
+
+    Args:
+        request (EmailRequest): The email input.
+
+    Returns:
+        dict: Masked email body, list of masked entities, and category.
+    """
+    # Call the masking function
     result_json_str = mask_email_string(request.email)
 
     # Convert JSON string to Python dict
     result_dict = json.loads(result_json_str)
 
-    # Return it as JSON response
     return result_dict
